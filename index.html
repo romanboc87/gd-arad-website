@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ג.ד ארד מהנדסים</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    header {
+      background: white;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo {
+      height: 70px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .login-btn {
+  background: #0b3d5c;
+  color: white;
+}
+
+.hero {
+  height: 90vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background: black;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-logo {
+  width: 320px;
+  max-width: 85%;
+  margin-bottom: 25px;
+  opacity: 1;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  animation: fadeOutLogo 1s ease forwards;
+  animation-delay: 3s;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      background: #0b3d5c;
+      padding: 12px 25px;
+      color: white;
+      text-decoration: none;
+      margin: 5px;
+      display: inline-block;
+      border-radius: 5px;
+    }
+
+    .projects {
+      padding: 60px 40px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .projects h2 {
+      margin-bottom: 40px;
+      font-size: 28px;
+      color: #222;
+    }
+
+    .projects-grid {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .project-card {
+      position: relative;
+      width: 300px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      background: #ddd;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: 0.3s;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+    .project-card:hover .overlay {
+      opacity: 1;
+    }
+
+    .overlay h3 {
+      margin: 0 0 10px 0;
+    }
+
+    .overlay p {
+      margin: 0;
+    }
+	.hero-logo {
+ 	 width: 400px;
+  	margin-bottom: 30px;
+  	opacity: 0.65;
+	}
+	.about {
+  padding: 80px 40px;
+  background: #f5f5f5;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.about-text {
+  width: 50%;
+}
+
+.about-text h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.about-text ul {
+  padding: 0;
+  list-style: none;
+}
+
+.about-text li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-right: 20px;
+}
+
+.about-text li::before {
+  content: "✔";
+  position: absolute;
+  right: 0;
+  color: #0b3d5c;
+}
+
+.about-image {
+  width: 50%;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+.services {
+  padding: 80px 40px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.services-subtitle {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #666;
+  line-height: 1.7;
+}
+
+.services-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.service-card {
+  width: 300px;
+  background: #f7f7f7;
+  padding: 30px 25px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-align: right;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.service-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #0b3d5c;
+  font-size: 22px;
+}
+
+.service-card p {
+  margin: 0;
+  line-height: 1.7;
+  color: #444;
+}
+.process {
+  padding: 80px 40px;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.process h2 {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+.process-steps {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.step {
+  width: 220px;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  background: #0b3d5c;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.step h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.step p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+.contact {
+  padding: 80px 40px;
+  background: #ffffff;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-info h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.contact-info p {
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.contact-item {
+  margin-bottom: 14px;
+  color: #333;
+  line-height: 1.7;
+}
+
+.contact-item strong {
+  color: #0b3d5c;
+  margin-left: 8px;
+}
+
+.contact-form-box {
+  flex: 1;
+  min-width: 320px;
+  background: #f7f7f7;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.contact-form button {
+  background: #0b3d5c;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #082c43;
+}
+@keyframes fadeOutLogo {
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.project-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: white;
+  color: #0b3d5c;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="logo.png" class="logo" alt="לוגו ג.ד ארד מהנדסים">
+
+    <nav>
+      <a href="#">מי אנחנו</a>
+      <a href="#">פרויקטים</a>
+      <a href="#">צור קשר</a>
+      <a href="#" class="login-btn">כניסה למערכת</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="hero-video.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <img src="logo-white.png" class="hero-logo" alt="לוגו ג.ד ארד מהנדסים">
+
+    <h1>ניהול פרויקטים בתשתיות ובנייה ציבורית</h1>
+    <p>שליטה מלאה, תכנון מדויק וביצוע מקצועי</p>
+
+    <a href="#" class="btn">פרויקטים נבחרים</a>
+    <a href="#" class="btn">צור קשר</a>
+  </div>
+</section>
+
+  <section class="projects">
+    <h2>פרויקטים נבחרים</h2>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80" alt="גשר תחבורתי">
+        <div class="overlay">
+          <h3>גשר גלניות</h3>
+          <p>גשר קשתי לכלי רכב בעלות כולל של 13 מלש"ח</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+	<img src="project1.jpg">
+        <div class="overlay">
+          <h3>שכונת כלניות – שלב א׳ + ב׳</h3>
+	  <p>ניהול פרויקט הקמת שכונה רחב היקף</p>
+	  <p>מעל 1200 יחידות דיור צמודי קרקע</p>
+	  <p>עבודות תשתית לרבות בריכות מים מערכות הגברת לחץ ופיתוח אקסטנסיבי</p>
+	  <a href="project1.html" class="project-btn">לפרטים</a>
+        </div>
+      </div>
+
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=80" alt="מבני ציבור">
+        <div class="overlay">
+          <h3>בתי ספר וגנים ציבורים</h3>
+          <p>פיקוח וניהול פרויקט</p>
+       
+</div>
+ </div>
+	<div class="project-card">
+  	<img src="project2.jpg">
+  	<div class="overlay">
+	    <h3>שכונת נופים – ערד</h3>
+  	  <p>ניהול פרויקט מגורים ופיתוח</p>
+ 	   <a href="project2.html" class="project-btn">לפרטים</a>
+  </div>
+      </div>
+    </div>
+  </section>
+<section class="about">
+  <div class="about-container">
+
+    <div class="about-text">
+      <h2>מי אנחנו</h2>
+      <p>
+        ג.ד ארד מהנדסים מתמחה בניהול פרויקטים בתחומי התשתיות והבנייה הציבורית.
+        החברה מלווה פרויקטים מורכבים משלב התכנון ועד למסירה, תוך הקפדה על מקצועיות,
+        בקרה שוטפת ותיאום בין כלל הגורמים המעורבים.
+      </p>
+
+      <ul>
+        <li>ניסיון בניהול פרויקטים מורכבים</li>
+        <li>שליטה ובקרה לאורך כל שלבי הפרויקט</li>
+        <li>עבודה מול גופים ציבוריים ופרטיים</li>
+      </ul>
+    </div>
+
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80">
+    </div>
+
+  </div>
+</section>
+<section class="services">
+  <h2>תחומי פעילות</h2>
+  <p class="services-subtitle">ליווי, ניהול ובקרה בפרויקטים מורכבים בתחומי התשתיות והבנייה הציבורית</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>תשתיות תחבורה</h3>
+      <p>ניהול פרויקטים של כבישים, מחלפים, גשרים ומערכות תחבורה.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>שכונות מגורים</h3>
+      <p>ליווי תכנון, תיאום וניהול ביצוע של שכונות מגורים חדשות.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>מבני ציבור</h3>
+      <p>ניהול פרויקטים של בתי ספר, מוסדות חינוך ומבני ציבור נוספים.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>פיתוח עירוני</h3>
+      <p>עבודות פיתוח, תשתיות עירוניות, ניקוז, מדרכות וסביבת מגורים.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>בקרה ופיקוח</h3>
+      <p>שליטה שוטפת על התקדמות, איכות ביצוע, לוחות זמנים ותיאום בין גורמים.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>ליווי מקצה לקצה</h3>
+      <p>מניהול ראשוני ותכנון ועד מסירה מסודרת והשלמת הפרויקט.</p>
+    </div>
+  </div>
+</section>
+<section class="process">
+  <h2>איך אנחנו עובדים</h2>
+
+  <div class="process-steps">
+
+    <div class="step">
+      <div class="circle">1</div>
+      <h3>אפיון ותכנון</h3>
+      <p>לימוד צרכי הפרויקט, הגדרת יעדים ותיאום ראשוני.</p>
+    </div>
+
+    <div class="step">
+      <div class="circle">2</div>
+      <h3>ניהול ובקרה</h3>
+      <p>תיאום בין כלל הגורמים ומעקב שוטף לאורך כל שלבי הפרויקט.</p>
+    </div>
+
+    <div class="step">
+      <div class="circle">3</div>
+      <h3>פיקוח וביצוע</h3>
+      <p>בקרה מקצועית בשטח והבטחת איכות הביצוע.</p>
+    </div>
+
+    <div class="step">
+      <div class="circle">4</div>
+      <h3>מסירה</h3>
+      <p>ליווי עד סיום הפרויקט ומסירה מסודרת.</p>
+    </div>
+
+  </div>
+</section>
+<section class="contact">
+  <div class="contact-container">
+    
+    <div class="contact-info">
+      <h2>צור קשר</h2>
+      <p>
+        נשמח לשוחח, להכיר את הצרכים שלכם ולבחון כיצד נוכל ללוות את הפרויקט הבא שלכם.
+      </p>
+
+      <div class="contact-item">
+        <strong>טלפון:</strong>
+        <span>052-8961686 / 052-8974443</span>
+      </div>
+
+      <div class="contact-item">
+        <strong>דוא"ל:</strong>
+        <span>dror@gdarad.com / roman@gdarad.com</span>
+      </div>
+
+      <div class="contact-item">
+        <strong>כתובת סניף מרכז :</strong>
+        <span>רמת השרון   </span>
+	<strong>כתובת סניף דרום :</strong>
+        <span>כרמית   </span>
+      </div>
+    </div>
+
+    <div class="contact-form-box">
+      <form class="contact-form">
+        <input type="text" placeholder="שם מלא">
+        <input type="text" placeholder="שם החברה">
+        <input type="tel" placeholder="טלפון">
+        <input type="email" placeholder="דוא&quot;ל">
+        <textarea placeholder="פרטי הפנייה"></textarea>
+        <button type="submit">שלח פנייה</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+</body>
+</html>
