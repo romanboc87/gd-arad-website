@@ -13,7 +13,7 @@
     }
 
     header {
-      background: white;
+      background: #f5f5f5;
       padding: 20px 50px;
       display: flex;
       justify-content: space-between;
@@ -47,24 +47,25 @@
   justify-content: center;
   text-align: center;
   color: white;
+  background: white;
 }
 
 .hero-video {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%;
+  width: 78%;
   height: 100%;
   object-fit: contain;
   transform: translate(-50%, -50%);
   z-index: 1;
-  background: black;
+  background: white;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.00);
   z-index: 2;
 }
 
@@ -439,6 +440,47 @@
   border-radius: 5px;
   font-size: 14px;
 }
+.clients {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 3;
+}
+
+.clients img {
+  width: 150px;
+  max-height: 70px;
+  object-fit: contain;
+
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+  opacity: 0.95;
+  transition: 0.3s;
+}
+
+.clients img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+  filter: grayscale(100%);
+}
+
+.clients.left {
+  left: -10px;
+}
+
+.clients.right {
+  right: -5px;
+}
+.clients {
+  padding: 0 5px;
+}
   </style>
 </head>
 
@@ -462,6 +504,24 @@
 
   <div class="hero-overlay"></div>
 
+<div class="clients left">
+  <img src="aradhacal.png">
+  <img src="lachis.png">
+  <img src="merchavim.png">
+  <img src="gadera.png">
+  <img src="kgat.png">
+  <img src="aradmuni.png">
+</div>
+
+<div class="clients right">
+  <img src="binui.png">
+  <img src="maysheva.png">
+  <img src="telaviv.png">
+  <img src="beduim.png">
+  <img src="masad%20oz.png">
+  <img src="bearsheva.png">
+</div>
+
   <div class="hero-content">
     <img src="logo-white.png" class="hero-logo" alt="לוגו ג.ד ארד מהנדסים">
 
@@ -470,6 +530,7 @@
 
     <a href="#" class="btn">פרויקטים נבחרים</a>
     <a href="#" class="btn">צור קשר</a>
+
   </div>
 </section>
 
@@ -478,10 +539,11 @@
 
     <div class="projects-grid">
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80" alt="גשר תחבורתי">
+       <img src="project3.jpg">
         <div class="overlay">
-          <h3>גשר גלניות</h3>
-          <p>גשר קשתי לכלי רכב בעלות כולל של 13 מלש"ח</p>
+          <h3>מבני תעשייה – מפעל אוטו טק, ערד</h3>
+	<p>הקמת מפעל בשטח של כ־2,000 מ"ר</p>
+    <a href="project3.html" class="project-btn">לפרטים</a>
         </div>
       </div>
 
